@@ -1,0 +1,13 @@
+{
+  "name": "mistFox",
+  "version": "0.1.0",
+  "description": "A Firefox theme.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "whiteGloom <karabin.m@yandex.ru> (https://github.com/whiteGloom)",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "contributors": []
+}
