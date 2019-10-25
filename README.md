@@ -32,7 +32,7 @@ To *install* the theme, do the following:
 
 1. In the Firefox search bar, enter **`about:config`**
 2. In the opened tab, switch the **`toolkit.legacyUserProfileCustomizations.stylesheets`** to **`true`** state
-3. In the Firefox search bar, enter "about:profiles"
+3. In the Firefox search bar, enter **`about:profiles`**
 4. In the opened tab, search the current profile and open it's **root** directory
 5. In the opened window, create a folder named **`chrome`**
 6. Transfer the **`userChrome.css`** file from the **`prod`** folder of this repository to the created folder
