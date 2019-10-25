@@ -1,14 +1,13 @@
 import merge from "webpack-merge";
 
-import makeMainConfig from "./makeMainConfig.js";
-import makeStaticConfig from "./makeStaticConfig.js";
-import makeStylesConfig from "./makeStylesConfig.js";
+import mainConfig from "./mainConfig.js";
+import stylesConfig from "./stylesConfig.js";
 
 var workFolder = process.cwd();
 
 var config = merge([
-	makeMainConfig({workFolder}),
-	makeStylesConfig()
+	mainConfig({workFolder}),
+	stylesConfig()
 ]);
 
 export default config;
