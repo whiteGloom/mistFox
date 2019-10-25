@@ -14,6 +14,9 @@
 
 *The last time the theme was tested on Firefox version 70.0.*
 
+**Used plugins:**
+* **[Webpack](https://webpack.js.org/ "Webpack")**
+
 
 ## Navigation
 
@@ -21,6 +24,7 @@
 	- **Navigation**
 	- **[How to](#how-to "How to")**
 		+ **[Installing theme](#installing-theme "Installing theme")**
+		+ **[To work with source code](#To-work-with-source-code "To work with source code")**
 	- **[End.](#end "End.")**
 
 
@@ -35,13 +39,22 @@ To *install* the theme, do the following:
 3. In the Firefox search bar, enter **`about:profiles`**
 4. In the opened tab, search the current profile and open it's **root directory**
 5. In the opened window, create a folder named **`chrome`**
-6. Transfer the **`userChrome.css`** file from the **`prod`** folder of this repository to the created folder
+6. Transfer the **[userChrome.css](./prod/userChrome.css "userChrome.css")** file from the **`prod`** folder of this repository to the created folder
 7. Restart the Firefox. Done, the theme should apply.
+
+[↑ To navigation](#Navigation "↑ To navigation")
+
+### To work with source code
+
+#### Commands
+* `npm run start` - Starts the style assembly
 
 [↑ To navigation](#Navigation "↑ To navigation")
 
 ## End.
 
+
+------------
 
 
 # Шо ита? [RU]
@@ -52,6 +65,9 @@ To *install* the theme, do the following:
 
 *Последний раз тема проверялась на Firefox версии 70.0.*
 
+**Используемые плагины:**
+* **[Webpack](https://webpack.js.org/ "Webpack")**
+
 
 ## Навигация
 
@@ -59,6 +75,7 @@ To *install* the theme, do the following:
 	- **Навигация**
 	- **[Инструкция](#инструкция "Инструкция")**
 		+ **[Установка темы](#установка-темы "Установка темы")**
+		+ **[Для работы с исходным кодом](#для-работы-с-исходным-кодом "Для работы с исходным кодом")**
 	- **[Всё.](#всё "End.")**
 
 
@@ -73,10 +90,18 @@ To *install* the theme, do the following:
 3. В поисковой строке в Firefox напишите: **`about:profiles`**
 4. В открывшейся вкладке найдите текущий профиль и перейдите в его **корневой каталог**
 5. В открывшемся окне проводника создайте папку с названием **`chrome`**
-6. В созданную папку перенести файл **`userChrome.css`** из папки **`prod`** этого репозитория
+6. В созданную папку перенести файл **[userChrome.css](./prod/userChrome.css "userChrome.css")** из папки **`prod`** этого репозитория
 7. Перезапустите Firefox. Готово, тема должна примениться.
 
 [↑ К навигации](#Навигация "↑ К навигации")
+
+### Для работы с исходным кодом
+
+#### Команды
+* `npm run start` - инициация сборки стилей
+
+[↑ К навигации](#Навигация "↑ К навигации")
+
 
 ## Всё.
 **-whiteGloom**

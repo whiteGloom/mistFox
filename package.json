@@ -1,13 +1,35 @@
 {
-  "name": "mistFox",
-  "version": "0.1.4",
-  "description": "A Firefox theme.",
-  "main": "index.js",
-  "scripts": {
-  },
-  "author": "whiteGloom <karabin.m@yandex.ru> (https://github.com/whiteGloom)",
-  "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {},
-  "contributors": []
+	"name": "mistfox",
+	"version": "0.2.0",
+	"description": "A Firefox theme.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node --experimental-modules index.js"
+	},
+	"author": "whiteGloom <karabin.m@yandex.ru> (https://github.com/whiteGloom)",
+	"license": "MIT",
+	"devDependencies": {
+		"css-loader": "^3.2.0",
+		"mini-css-extract-plugin": "^0.8.0",
+		"style-loader": "^1.0.0",
+		"webpack": "^4.41.2",
+		"webpack-merge": "^4.2.2"
+	},
+	"dependencies": {},
+	"contributors": [],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/whiteGloom/mistFox.git"
+	},
+	"keywords": [
+		"theme",
+		"firefox",
+		"css",
+		"userChrome"
+	],
+	"bugs": {
+		"url": "https://github.com/whiteGloom/mistFox/issues"
+	},
+	"homepage": "https://github.com/whiteGloom/mistFox#readme"
 }
