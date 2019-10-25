@@ -6,6 +6,10 @@
 
 
 # What is it? [ENG]
+
+[↓ To navigation](#Navigation "↓ To navigation") | **[↑ To languages](#languages "↑ To languages")**
+
+
 **mistFox** — theme, that changes UI of [Firefox](https://www.mozilla.org/en-US/firefox/new/ "Firefox") browser.
 
 *The last time the theme was tested on Firefox version 70.0.*
@@ -34,11 +38,16 @@ To *install* the theme, do the following:
 6. Transfer the **`userChrome.css`** file from the **`prod`** folder of this repository to the created folder
 7. Restart the Firefox. Done, the theme should apply.
 
+[↑ To navigation](#Navigation "↑ To navigation")
+
 ## End.
 
 
 
 # Шо ита? [RU]
+
+[↓ К навигации](#Навигация "↓ К навигации") | **[↑ To languages](#languages "↑ To languages")**
+
 **mistFox** — тема, изменяющая UI браузера [Firefox](https://www.mozilla.org/ru/firefox/new/ "Firefox").
 
 *Последний раз тема проверялась на Firefox версии 70.0.*
@@ -67,6 +76,7 @@ To *install* the theme, do the following:
 6. В созданную папку перенести файл **`userChrome.css`** из папки **`prod`** этого репозитория
 7. Перезапустите Firefox. Готово, тема должна примениться.
 
+[↑ К навигации](#Навигация "↑ К навигации")
 
 ## Всё.
 **-whiteGloom**
