@@ -22,13 +22,14 @@
 
 * **[What is it? [ENG]](#what-is-it-eng "What is it? [ENG]")**
 	- **Navigation**
-	- **[How to](#how-to "How to")**
+	- **[How to for a user](#how-to-for-a-user "How to for a user")**
 		+ **[Installing theme](#installing-theme "Installing theme")**
-		+ **[To work with source code](#To-work-with-source-code "To work with source code")**
+	- **[To work with source code](#To-work-with-source-code "To work with source code")**
+		+ **[Commands](#commands "Commands")**
 	- **[End.](#end "End.")**
 
 
-## How to
+## How-to for a user
 
 ### Installing theme
 
@@ -44,9 +45,9 @@ To *install* the theme, do the following:
 
 [↑ To navigation](#Navigation "↑ To navigation")
 
-### To work with source code
+## How-to for working with source code
 
-#### Commands
+### Commands
 * `npm run start` - Starts the style assembly
 
 [↑ To navigation](#Navigation "↑ To navigation")
@@ -73,13 +74,14 @@ To *install* the theme, do the following:
 
 * **[Шо ита? [RU]](#шо-ита-ru "Шо ита? [RU]")**
 	- **Навигация**
-	- **[Инструкция](#инструкция "Инструкция")**
+	- **[Инструкция для пользователя](#инструкция-для-пользователя "Инструкция для пользователя")**
 		+ **[Установка темы](#установка-темы "Установка темы")**
-		+ **[Для работы с исходным кодом](#для-работы-с-исходным-кодом "Для работы с исходным кодом")**
+	+ **[Инструкция для работы с исходным кодом](#инструкция-для-работы-с-исходным кодом "Инструкция для работы с исходным кодом")**
+		+ **[Команды](#команды "Команды")**
 	- **[Всё.](#всё "End.")**
 
 
-## Инструкция
+## Инструкция для пользователя
 
 ### Установка темы
 
@@ -95,9 +97,11 @@ To *install* the theme, do the following:
 
 [↑ К навигации](#Навигация "↑ К навигации")
 
-### Для работы с исходным кодом
+## Инструкция для работы с исходным кодом
 
-#### Команды
+Не забудьте про `npm install` для установки зависимостей.
+
+### Команды
 * `npm run start` - инициация сборки стилей
 
 [↑ К навигации](#Навигация "↑ К навигации")
