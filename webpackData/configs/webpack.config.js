@@ -3,11 +3,11 @@ import merge from "webpack-merge";
 import mainConfig from "./mainConfig.js";
 import stylesConfig from "./stylesConfig.js";
 
-var workFolder = process.cwd();
+function makeConfig(options) {
+	return merge([
+		mainConfig({workFolder: options.workFolder, entryChunkName: options.entryChunkName}),
+		stylesConfig({cssOutputName: options.cssOutputName})
+	]);
+}
 
-var config = merge([
-	mainConfig({workFolder}),
-	stylesConfig()
-]);
-
-export default config;
+export default makeConfig;

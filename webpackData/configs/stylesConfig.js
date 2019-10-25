@@ -19,7 +19,7 @@ function makeStylesConfig(options) {
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: "userChrome.css"
+				filename: options.cssOutputName + ".css"
 			})
 		]
 	};

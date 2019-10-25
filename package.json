@@ -1,11 +1,11 @@
 {
 	"name": "mistfox",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "A Firefox theme.",
 	"main": "index.js",
 	"scripts": {
-		"build": "babel-node index.js",
-		"autoApplyStyles": "babel-node index.js"
+		"build": "babel-node index.js -- simpleBuild",
+		"autoApply": "babel-node index.js -- autoApplyStyles"
 	},
 	"author": "whiteGloom <karabin.m@yandex.ru> (https://github.com/whiteGloom)",
 	"license": "MIT",
@@ -15,6 +15,7 @@
 		"@babel/node": "^7.6.3",
 		"@babel/preset-env": "^7.6.3",
 		"css-loader": "^3.2.0",
+		"is-valid-path": "^0.1.1",
 		"mini-css-extract-plugin": "^0.8.0",
 		"style-loader": "^1.0.0",
 		"webpack": "^4.41.2",
