@@ -47,6 +47,8 @@ To *install* the theme, do the following:
 
 ## How-to for working with source code
 
+Do not forget about **`npm install`** to install dependencies.
+
 ### Commands
 * `npm run start` - Starts the style assembly
 
@@ -99,7 +101,7 @@ To *install* the theme, do the following:
 
 ## Инструкция для работы с исходным кодом
 
-Не забудьте про `npm install` для установки зависимостей.
+Не забудьте про **`npm install`** для установки зависимостей.
 
 ### Команды
 * `npm run start` - инициация сборки стилей
