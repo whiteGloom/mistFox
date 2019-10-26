@@ -52,7 +52,7 @@ To *install* the theme, do the following:
 
 ### Removing theme
 
-To ** delete ** a theme, just clear the ** `chrome` ** folder in your Firefox profile.
+To **delete** a theme, just clear the **`chrome`** folder in your Firefox profile.
 
 [↑ To navigation](#Navigation "↑ To navigation")
 
@@ -84,7 +84,7 @@ This feature requires **paths to your profiles**. They can be specified:
 * **Specify in the file `profilePaths.txt`**, located in the root folder of the project
 
 **The first option** is suitable if there is only one profile, assembly will be carried out once, etc.
-**You need** to pass the argument ** `path` ** after the function name, containing the path to the profile.
+**You need** to pass the argument **`path`** after the function name, containing the path to the profile.
 
 *Example:*
 
@@ -92,7 +92,7 @@ This feature requires **paths to your profiles**. They can be specified:
 
 
 **The second option** is much more convenient - there can be as many paths as you like, they are conveniently stored in a file, you do not need to enter paths every time, etc.
-**You need** in the file ** `profilePaths.txt` ** below the dashed line, enter the paths to the profiles (*without separators, one path per line*) into which the styles should be copied.
+**You need** in the file **`profilePaths.txt`** below the dashed line, enter the paths to the profiles (*without separators, one path per line*) into which the styles should be copied.
 
 *Example:*
 
@@ -104,17 +104,17 @@ And another one path to your another profile
 ```
 
 **After functions start**
-The project will start the assembly of styles, and then copy them to the ** `chrome` ** folder in the profile folder. If there is none, then he will create it.
+The project will start the assembly of styles, and then copy them to the **`chrome`** folder in the profile folder. If there is none, then he will create it.
 
 **Note:**
-If the profile already contains the ** `userChrome` ** file, reserve it as it will be overwritten.
+If the profile already contains the **`userChrome`** file, reserve it as it will be overwritten.
 
 [↑ To navigation](#Navigation "↑ To navigation")
 
 
 ### Styles editing
 
-The styles that are this theme are on the path ** `/src/styles/` **. Do whatever you want with them.
+The styles that are this theme are on the path **`/src/styles/`**. Do whatever you want with them.
 
 [↑ To navigation](#Navigation "↑ To navigation")
 
@@ -152,7 +152,7 @@ The styles that are this theme are on the path ** `/src/styles/` **. Do whatever
 	- **[Инструкция для пользователя](#инструкция-для-пользователя "Инструкция для пользователя")**
 		+ **[Установка темы](#установка-темы "Установка темы")**
 		+ **[Удаление темы](#удаление-темы "Удаление темы")**
-	+ **[Инструкция для работы с исходным кодом](#инструкция-для-работы-с-исходным кодом "Инструкция для работы с исходным кодом")**
+	+ **[Инструкция для работы с исходным кодом](#инструкция-для-работы-с-исходным-кодом "Инструкция для работы с исходным кодом")**
 		+ **[Иницализация проекта](#иницализация-проекта "Иницализация проекта")**
 		+ **[Обычная сборка стилей](#Обычная-сборка-стилей "Обычная сборка стилей")**
 		+ **[Авто-копирование стилей](#авто-копирование-стилей "Авто-копирование стилей")**
