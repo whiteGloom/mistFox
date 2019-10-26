@@ -10,11 +10,11 @@ class pathsLoader {
 		this._handlePath(string);
 	}
 
-	addPathsFromFile(filePath) {
+	addPathsFromFile(filePath, skip) {
 		var filePathContent = fs.readFileSync(filePath, "utf8").split("\n");
 
-		for (var i = 0; i < filePathContent.length; i++) {
-			this._handlePath(filePathContent[i])
+		for (var i = skip; i < filePathContent.length; i++) {
+			this._handlePath(filePathContent[i]);
 		};
 	}
 
@@ -23,8 +23,12 @@ class pathsLoader {
 	}
 
 	_handlePath(path) {
-		if (isValidPath(path) && this.paths.indexOf(path) === -1 && path.length > 0) this.paths.push(path);
-		return false;
+		try {
+			fs.statSync(path + "/");
+			if (this.paths.indexOf(path) === -1 && path.length > 0) this.paths.push(path);
+		} finally {
+			return
+		};
 	}
 }
 

@@ -1,6 +1,8 @@
+import colors from "colors/safe";
+import fs from "fs";
+
 import helper from "./src/helper.js";
 import pathsLoader from "./src/pathsLoader.js";
-import colors from "colors/safe";
 import webpackLoader from "./src/webpackData/webpackLoader.js";
 
 const npmArguments = process.argv.slice(2);
@@ -26,7 +28,7 @@ function simpleBuildMode() {
 
 function stylesAutoApplyMode() {
 	pathsLoader.addPathFromString(helper.getTagValue(npmArguments, "path"));
-	pathsLoader.addPathsFromFile(pathsFile);
+	pathsLoader.addPathsFromFile(pathsFile, 10);
 	var paths = pathsLoader.getPaths();
 
 	if (paths.length === 0) {
@@ -35,13 +37,14 @@ function stylesAutoApplyMode() {
 	}
 
 	webpackLoader.run(stats => {
-		stats.compilation.chunks.forEach(chunk => {
-			if (chunk.name === entryChunkName) {
-				var buildedStylesFileName = chunk.files[chunk.files.indexOf(cssOutputName + ".css")];
-				paths.forEach(path => {
-					
-				});
-			}
+		paths.forEach(path => {
+			try {
+				fs.statSync(path + "/chrome/");
+				fs.copyFileSync("./prod/" + cssOutputName + ".css", path + "/chrome/" + cssOutputName + ".css");
+			} catch(err) {
+				fs.mkdirSync(path + "/chrome/");
+				fs.copyFileSync("./prod/" + cssOutputName + ".css", path + "/chrome/" + cssOutputName + ".css");
+			};
 		});
 	});
 }

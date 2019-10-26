@@ -1,9 +1,10 @@
 {
 	"name": "mistfox",
-	"version": "0.2.4",
+	"version": "0.3.0",
 	"description": "A Firefox theme.",
 	"main": "index.js",
 	"scripts": {
+		"initialize": "babel-node initial.js",
 		"build": "babel-node index.js -- simpleBuild",
 		"stylesAutoApply": "babel-node index.js -- stylesAutoApply"
 	},
@@ -16,7 +17,6 @@
 		"@babel/preset-env": "^7.6.3",
 		"colors": "^1.4.0",
 		"css-loader": "^3.2.0",
-		"is-valid-path": "^0.1.1",
 		"mini-css-extract-plugin": "^0.8.0",
 		"style-loader": "^1.0.0",
 		"webpack": "^4.41.2",
