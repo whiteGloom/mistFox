@@ -1,19 +1,50 @@
-import webpack from "webpack";
-import webpackConfig from "./webpackData/configs/webpack.config.js";
+import colors from "colors/safe";
+import fs from "fs";
 
-var webpackConfigured = webpack(webpackConfig);
+import helper from "./src/helper.js";
+import pathsLoader from "./src/pathsLoader.js";
+import webpackLoader from "./src/webpackData/webpackLoader.js";
 
-webpackConfigured.run((err, stats) => {
-	var err = false;
+const npmArguments = process.argv.slice(2);
+const workFolder = process.cwd();
+const pathsFile = "profilePaths.txt";
 
-	if (stats && stats.compilation && stats.compilation.errors.length !== 0) {
-		console.log(stats.compilation.errors);
-		err = true;
+// Webpack config
+var cssOutputName = "userChrome",
+	entryChunkName = "main";
+webpackLoader.makeConfig({workFolder, entryChunkName, cssOutputName});
+
+// Simple build of styles
+if (helper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
+
+// Auto applying builded styles to browser
+if (helper.checkTag(npmArguments, "stylesAutoApply")) stylesAutoApplyMode();
+
+
+
+function simpleBuildMode() {
+	webpackLoader.run();
+}
+
+function stylesAutoApplyMode() {
+	pathsLoader.addPathFromString(helper.getTagValue(npmArguments, "path"));
+	pathsLoader.addPathsFromFile(pathsFile, 10);
+	var paths = pathsLoader.getPaths();
+
+	if (paths.length === 0) {
+		console.log(colors.red.underline("\n\nThere is no paths!\n\n"));
+		return;
 	}
-	if (err) {
-		console.log(err)
-		err = true;
-	}
 
-	if (err !== true) console.log("\n\nCompiled successfully.\n\n");
-});
+	webpackLoader.run(stats => {
+		paths.forEach(path => {
+			try {
+				fs.statSync(path + "/chrome/");
+				fs.copyFileSync("./prod/" + cssOutputName + ".css", path + "/chrome/" + cssOutputName + ".css");
+			} catch(err) {
+				fs.mkdirSync(path + "/chrome/");
+				fs.copyFileSync("./prod/" + cssOutputName + ".css", path + "/chrome/" + cssOutputName + ".css");
+			};
+		});
+	});
+}

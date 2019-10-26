@@ -4,11 +4,9 @@ function makeMainConfig(options) {
 	options = options ? options : {};
 	var workFolder = options.workFolder;
 
-	return {
+	var config = {
 		mode: "development",
-		entry: {
-			"main": workFolder + "/src/main.js"
-		},
+		entry: {},
 		output: {
 			path: workFolder + "/prod/",
 			filename: (data) => {
@@ -36,6 +34,10 @@ function makeMainConfig(options) {
 		},
 		devtool: "none",
 	};
+
+	config.entry[options.entryChunkName] = workFolder + "/src/" + options.entryChunkName + ".js";
+
+	return config
 };
 
 export default makeMainConfig
