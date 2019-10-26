@@ -36,7 +36,6 @@ function makeMainConfig(options) {
 	};
 
 	config.entry[options.entryChunkName] = workFolder + "/src/" + options.entryChunkName + ".js";
-	console.log(config.entry[options.entryChunkName])
 
 	return config
 };

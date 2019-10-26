@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "babel-node index.js -- simpleBuild",
-		"autoApply": "babel-node index.js -- autoApplyStyles"
+		"stylesAutoApply": "babel-node index.js -- stylesAutoApply"
 	},
 	"author": "whiteGloom <karabin.m@yandex.ru> (https://github.com/whiteGloom)",
 	"license": "MIT",
@@ -14,6 +14,7 @@
 		"@babel/core": "^7.6.4",
 		"@babel/node": "^7.6.3",
 		"@babel/preset-env": "^7.6.3",
+		"colors": "^1.4.0",
 		"css-loader": "^3.2.0",
 		"is-valid-path": "^0.1.1",
 		"mini-css-extract-plugin": "^0.8.0",

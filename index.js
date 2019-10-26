@@ -1,65 +1,47 @@
-import webpack from "webpack";
 import helper from "./src/helper.js";
-import pathsLoader from "./src/profilePathLoader.js";
-import makeWebpackConfig from "./webpackData/configs/webpack.config.js";
+import pathsLoader from "./src/pathsLoader.js";
+import colors from "colors/safe";
+import webpackLoader from "./src/webpackData/webpackLoader.js";
 
-;(function() {
-	// Config
-	const npmArguments = process.argv.slice(2);
+const npmArguments = process.argv.slice(2);
+const workFolder = process.cwd();
+const pathsFile = "profilePaths.txt";
 
-	const workFolder = process.cwd();
-	const entryChunkName = "main";
-	const cssOutputName = "userChrome";
-	const webpackConfig = makeWebpackConfig({workFolder, entryChunkName, cssOutputName});
-	const pathsFile = "profilePaths.txt";
+// Webpack config
+var cssOutputName = "userChrome",
+	entryChunkName = "main";
+webpackLoader.makeConfig({workFolder, entryChunkName, cssOutputName});
+
+// Simple build of styles
+if (helper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
+
+// Auto applying builded styles to browser
+if (helper.checkTag(npmArguments, "stylesAutoApply")) stylesAutoApplyMode();
 
 
-	// Simple build of styles
-	if (helper.checkTag(npmArguments, "simpleBuild")) {
-		initWebpack();
+
+function simpleBuildMode() {
+	webpackLoader.run();
+}
+
+function stylesAutoApplyMode() {
+	pathsLoader.addPathFromString(helper.getTagValue(npmArguments, "path"));
+	pathsLoader.addPathsFromFile(pathsFile);
+	var paths = pathsLoader.getPaths();
+
+	if (paths.length === 0) {
+		console.log(colors.red.underline("\n\nThere is no paths!\n\n"));
+		return;
 	}
 
-	// Auto applying builded styles to browser
-	if (helper.checkTag(npmArguments, "autoApplyStyles")) {
-		var paths = pathsLoader(pathsFile, helper.getTagValue(npmArguments, "path"));
-		if (!Array.isArray(paths) && paths.length === 0) {
-			console.log("There is wrong paths!");
-			return;
-		}
-
-		initWebpack(stats => {
-			stats.compilation.chunks.forEach(chunk => {
-				if (chunk.name === entryChunkName) {
-					var buildedStylesFileName = chunk.files[chunk.files.indexOf(cssOutputName + ".css")];
-					paths.forEach(path => {
-						
-					});
-				}
-			});
+	webpackLoader.run(stats => {
+		stats.compilation.chunks.forEach(chunk => {
+			if (chunk.name === entryChunkName) {
+				var buildedStylesFileName = chunk.files[chunk.files.indexOf(cssOutputName + ".css")];
+				paths.forEach(path => {
+					
+				});
+			}
 		});
-	}
-
-	function initWebpack(callback) {
-		var webpackConfigured = webpack(webpackConfig);
-
-		webpackConfigured.run(handler);
-
-		function handler(err, stats) {
-			var err = false;
-
-			if (stats && stats.compilation && stats.compilation.errors.length !== 0) {
-				console.log(stats.compilation.errors);
-				err = true;
-			}
-			if (err) {
-				console.log(err)
-				err = true;
-			}
-
-			if (err !== true) {
-				console.log("\n\nCompiled successfully.\n\n")
-				if (typeof callback == "function") callback(stats);
-			};
-		}
-	}
-})();
+	});
+}
