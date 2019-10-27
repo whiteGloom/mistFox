@@ -75,7 +75,7 @@ Oddly enough, to edit styles, **you will need experience with CSS and the develo
 
 The styles that are this theme are on the path **`/src/styles/`**. Do whatever you want with them.
 
-Firefox uses the XML-based **XUL** language. Its elements also have styles. They are edited by this theme.
+Firefox uses the XML-based **[XUL](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/XUL "XUL")** language. Its elements also have styles. They are edited by this theme.
 To see them, you need:
 
 1. Go to **developer tools. Keyboard shortcut: `ctrl + shift + i`**
@@ -142,7 +142,10 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 
 * `npm run initialize` - Initialize project
 * `npm run build` - Starts the styles assembly
-* `npm run stylesAutoApply` - Starts the assembly of styles, after which it automatically copies them to profiles
+* `npm run stylesAutoApply [path:YOURPATH]` - Starts the assembly of styles, after which it automatically copies them to profiles
+
+*Arguments:*
+* **YOURPATH:** - type: string. The path to your Firefox profile. Optional parameter, specified if paths are not specified in the file [profilePaths.txt](#styles-editing "Styles editing"). Example: `npm run stylesAutoApply -- path:yourpath`
 
 [↑ To navigation](#Navigation "↑ To navigation")
 
@@ -216,7 +219,7 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 
 Стили, которые являются этой темой, находятся по пути **`/src/styles/`**. Делайте с ними всё, что захотите.
 
-В Firefox используется основанный на XML язык **XUL**. У его элементов тоже есть стили. Их и редактирует эта тема.
+В Firefox используется основанный на XML язык **[XUL](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/XUL "XUL")**. У его элементов тоже есть стили. Их и редактирует эта тема.
 Что бы их посмотреть, нужно:
 
 1. Перейти в **инструменты разработчика. Клавиатурное сокращение: `ctrl+shift+i`**
@@ -282,10 +285,10 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 
 * `npm run initialize` - Инициализирует проект
 * `npm run build` - Начинает сборку стилей
-* `npm run stylesAutoApply [path:]` - Начинает сборку стилей, после которой автоматически копирует их в профили.
+* `npm run stylesAutoApply [path:ВАШПУТЬ]` - Начинает сборку стилей, после которой автоматически копирует их в профили.
 
 *Arguments:*
-* **path:** - type - string. Path to Firefox profile.
+* **ВАШПУТЬ:** - type: string. Путь к вашему Firefox профилю. Необязательный параметр, указывается в случае, если пути не указаны в файле [profilePaths.txt](#редактирование-стилей "Редактирование стилей"). Пример: `npm run stylesAutoApply -- path:вашпуть`
 
 [↑ К навигации](#Навигация "↑ К навигации")
 

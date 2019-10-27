@@ -35,9 +35,10 @@ function makeMainConfig(options) {
 		devtool: "none",
 	};
 
+	// Custom propertyes
 	config.entry[options.entryChunkName] = workFolder + "/src/" + options.entryChunkName + ".js";
 
-	return config
+	return config;
 };
 
-export default makeMainConfig
+export default makeMainConfig;

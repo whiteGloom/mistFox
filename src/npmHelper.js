@@ -1,4 +1,4 @@
-var helper = {
+var npmHelper = {
 	getTagValue(list, mark) {
 		if (typeof mark !== "string") return;
 
@@ -18,4 +18,4 @@ var helper = {
 	}
 }
 
-export default helper;
+export default npmHelper;

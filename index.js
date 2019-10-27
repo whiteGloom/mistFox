@@ -1,7 +1,7 @@
 import fs from "fs";
 import colors from "colors/safe";
 
-import helper from "./src/helper.js";
+import npmHelper from "./src/npmHelper.js";
 import pathsLoader from "./src/pathsLoader.js";
 import webpackLoader from "./src/webpackData/webpackLoader.js";
 
@@ -15,10 +15,10 @@ var cssOutputName = "userChrome",
 webpackLoader.makeConfig({workFolder, entryChunkName, cssOutputName});
 
 // Simple build of styles
-if (helper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
+if (npmHelper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
 
-// Auto applying builded styles to browser
-if (helper.checkTag(npmArguments, "stylesAutoApply")) stylesAutoApplyMode();
+// Build of styles and auto copying them to profile folder
+if (npmHelper.checkTag(npmArguments, "stylesAutoApply")) stylesAutoApplyMode();
 
 
 
@@ -27,7 +27,7 @@ function simpleBuildMode() {
 }
 
 function stylesAutoApplyMode() {
-	pathsLoader.addPathFromString(helper.getTagValue(npmArguments, "path"));
+	pathsLoader.addPathFromString(npmHelper.getTagValue(npmArguments, "path"));
 	pathsLoader.addPathsFromFile(pathsFile, 10);
 	var paths = pathsLoader.getPaths();
 

@@ -32,4 +32,4 @@ class pathsLoader {
 	}
 }
 
-export default new pathsLoader
+export default new pathsLoader;
