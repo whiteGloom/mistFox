@@ -114,7 +114,24 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 
 ### Styles editing
 
+Oddly enough, to edit styles, you will need experience with CSS and the developer tools of Firefox browser.
+
 The styles that are this theme are on the path **`/src/styles/`**. Do whatever you want with them.
+
+Firefox uses the XML-based **XUL** language. Its elements also have styles. They are edited by this theme.
+To see them, you need:
+
+1. Go to **developer tools. Keyboard shortcut: `ctrl + shift + i`**
+2. In the panel that opens, go to **settings. Keyboard Shortcut: `F1`**
+3. Find **section `Advanced Settings`**
+4. **Enable** option **`Enable browser chrome and add-on debugging toolboxes`**
+5. **Enable** the option ** `Enable remote debugging` **
+6. Open **remote debugging. Keyboard shortcut: `ctrl + shift + alt + i`**
+7. **Accept** incoming connection.
+8. Done. The opened remote debugging window is the same developer tools, but **it allows you to edit and view the styles of the Firefox window**.
+
+
+You can also search the Internet about *userChrome*, there are a lot of interesting things.
 
 [↑ To navigation](#Navigation "↑ To navigation")
 
@@ -237,7 +254,24 @@ The styles that are this theme are on the path **`/src/styles/`**. Do whatever y
 
 ### Редактирование стилей
 
+Как ни странно, для редкатирования стилей вам понадобится опыт работы с CSS и инструментами разработчика браузера Firefox.
+
 Стили, которые являются этой темой, находятся по пути **`/src/styles/`**. Делайте с ними всё, что захотите.
+
+В Firefox используется основанный на XML язык **XUL**. У его элементов тоже есть стили. Их и редактирует эта тема.
+Что бы их посмотреть, нужно:
+
+1. Перейти в **инструменты разработчика. Клавиатурное сокращение: `ctrl+shift+i`**
+2. В открывшейся панели перейти в **настройки. Клавиатурное сокращение: `F1`**
+3. Найти раздел **`Дополнительные параметры`**
+4. Включить параметр **`Включить инструменты отладки browser chrome и дополнений`**
+5. Включить параметр **`Включить удалённую отладку`**
+6. Открыть **удалённую отладку. Клавиатурное сокращение: `ctrl+shift+alt+i`**
+7. **Принять** входящее подключение.
+8. Готово. Открывшееся окно удалённой отладки - те же самые инструменты разработчика, но оно **позволяет редактировать и смотреть стили окна Firefox**.
+
+
+Ещё можно поискать в интернете про *userChrome*, там много интересного.
 
 [↑ К навигации](#Навигация "↑ К навигации")
 
