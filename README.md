@@ -73,7 +73,9 @@ To init project, do the following:
 
 Oddly enough, to edit styles, **you will need experience with CSS and the developer tools** of Firefox browser.
 
-The styles that are this theme are on the path **`/src/styles/`**. Do whatever you want with them.
+The styles that make up this theme are on the path **`/src/styles/`**. Do whatever you want with them.
+
+**A bit more detailed:**
 
 Firefox uses the XML-based **[XUL](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/XUL "XUL")** language. Its elements also have styles. They are edited by this theme.
 To see them, you need:
@@ -217,7 +219,9 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 
 Как ни странно, для редкатирования стилей **вам понадобится опыт работы с CSS и инструментами разработчика** браузера Firefox.
 
-Стили, которые являются этой темой, находятся по пути **`/src/styles/`**. Делайте с ними всё, что захотите.
+Стили, из которых состоит эта тема, находятся по пути **`/src/styles/`**. Делайте с ними всё, что захотите.
+
+**Немного подробнее:**
 
 В Firefox используется основанный на XML язык **[XUL](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/XUL "XUL")**. У его элементов тоже есть стили. Их и редактирует эта тема.
 Что бы их посмотреть, нужно:
