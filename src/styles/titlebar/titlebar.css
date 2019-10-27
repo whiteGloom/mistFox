@@ -1,0 +1,31 @@
+.titlebar-spacer[type="pre-tabs"] {
+	width: 15px !important;
+}
+
+.titlebar-button {
+	fill: white !important;
+	fill-opacity: .6 !important;
+	transition-duration: .4s !important;
+	transition-property: background-color, fill-opacity !important;
+}
+
+.titlebar-button:hover {
+	fill-opacity: 1 !important;
+	background-color: rgba(255, 255, 255, .1) !important;
+}
+
+.titlebar-close:hover {
+	fill-opacity: 1 !important;
+	background-color: rgba(217, 34, 111, 0.1) !important;
+}
+
+.titlebar-buttonbox:first-child::before {
+	display: block !important;
+	content: "" !important;
+	width: 1px !important;
+	background-color: white !important;
+	opacity: .15 !important;
+	height: 100% !important;
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
+}

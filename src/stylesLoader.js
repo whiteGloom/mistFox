@@ -1,3 +1,5 @@
+require("./styles/namespaces.css");
+
 var cache = {};
 
 function importAll (r) {
