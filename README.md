@@ -27,9 +27,9 @@
 		+ **[Removing theme](#removing-theme "Removing theme")**
 	- **[To work with source code](#To-work-with-source-code "To work with source code")**
 		+ **[Project initializing](#project-initializing "Project initializing")**
+		+ **[Styles editing](#styles-editing "Styles editing")**
 		+ **[Simple styles assembly](#simple-styles-assembly "Simple styles assembly")**
 		+ **[Auto copy styles](#auto-copy-styles "Auto copy styles")**
-		+ **[Styles editing](#styles-editing "Styles editing")**
 		+ **[NPM commands](#npm-commands "NPM commands")**
 	- **[End.](#end "End.")**
 
@@ -67,6 +67,32 @@ To init project, do the following:
 2. Do **`npm run initialize`** to init project.
 
 [↑ To navigation](#Navigation "↑ To navigation")
+
+
+### Styles editing
+
+Oddly enough, to edit styles, **you will need experience with CSS and the developer tools** of Firefox browser.
+
+The styles that are this theme are on the path **`/src/styles/`**. Do whatever you want with them.
+
+Firefox uses the XML-based **XUL** language. Its elements also have styles. They are edited by this theme.
+To see them, you need:
+
+1. Go to **developer tools. Keyboard shortcut: `ctrl + shift + i`**
+2. In the panel that opens, go to **settings. Keyboard Shortcut: `F1`**
+3. Find **section `Advanced Settings`**
+4. **Enable** option **`Enable browser chrome and add-on debugging toolboxes`**
+5. **Enable** the option ** `Enable remote debugging` **
+6. Open **remote debugging. Keyboard shortcut: `ctrl + shift + alt + i`**
+7. **Accept** incoming connection.
+8. Done. The opened remote debugging window is the same developer tools, but **it allows you to edit and view the styles of the Firefox window**.
+
+
+You can also search the Internet about *userChrome*, there are a lot of interesting things.
+
+[↑ To navigation](#Navigation "↑ To navigation")
+
+
 
 ### Simple styles assembly
 
@@ -112,30 +138,6 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 [↑ To navigation](#Navigation "↑ To navigation")
 
 
-### Styles editing
-
-Oddly enough, to edit styles, you will need experience with CSS and the developer tools of Firefox browser.
-
-The styles that are this theme are on the path **`/src/styles/`**. Do whatever you want with them.
-
-Firefox uses the XML-based **XUL** language. Its elements also have styles. They are edited by this theme.
-To see them, you need:
-
-1. Go to **developer tools. Keyboard shortcut: `ctrl + shift + i`**
-2. In the panel that opens, go to **settings. Keyboard Shortcut: `F1`**
-3. Find **section `Advanced Settings`**
-4. **Enable** option **`Enable browser chrome and add-on debugging toolboxes`**
-5. **Enable** the option ** `Enable remote debugging` **
-6. Open **remote debugging. Keyboard shortcut: `ctrl + shift + alt + i`**
-7. **Accept** incoming connection.
-8. Done. The opened remote debugging window is the same developer tools, but **it allows you to edit and view the styles of the Firefox window**.
-
-
-You can also search the Internet about *userChrome*, there are a lot of interesting things.
-
-[↑ To navigation](#Navigation "↑ To navigation")
-
-
 ### NPM Commands
 
 * `npm run initialize` - Initialize project
@@ -171,9 +173,9 @@ You can also search the Internet about *userChrome*, there are a lot of interest
 		+ **[Удаление темы](#удаление-темы "Удаление темы")**
 	+ **[Инструкция для работы с исходным кодом](#инструкция-для-работы-с-исходным-кодом "Инструкция для работы с исходным кодом")**
 		+ **[Иницализация проекта](#иницализация-проекта "Иницализация проекта")**
+		+ **[Редактирование стилей](#редактирование-стилей "Редактирование стилей")**
 		+ **[Обычная сборка стилей](#Обычная-сборка-стилей "Обычная сборка стилей")**
 		+ **[Авто-копирование стилей](#авто-копирование-стилей "Авто-копирование стилей")**
-		+ **[Редактирование стилей](#редактирование-стилей "Редактирование стилей")**
 		+ **[Команды NPM](#команды-npm "Команды NPM")**
 	- **[Всё.](#всё "End.")**
 
@@ -204,6 +206,30 @@ You can also search the Internet about *userChrome*, there are a lot of interest
 Список действий для инициализации проекта:
 1. Выполните **`npm install`** для установки зависимостей.
 2. Выполните **`npm run initialize`**, чтобы инициализировать проект.
+
+[↑ К навигации](#Навигация "↑ К навигации")
+
+
+### Редактирование стилей
+
+Как ни странно, для редкатирования стилей **вам понадобится опыт работы с CSS и инструментами разработчика** браузера Firefox.
+
+Стили, которые являются этой темой, находятся по пути **`/src/styles/`**. Делайте с ними всё, что захотите.
+
+В Firefox используется основанный на XML язык **XUL**. У его элементов тоже есть стили. Их и редактирует эта тема.
+Что бы их посмотреть, нужно:
+
+1. Перейти в **инструменты разработчика. Клавиатурное сокращение: `ctrl+shift+i`**
+2. В открывшейся панели перейти в **настройки. Клавиатурное сокращение: `F1`**
+3. Найти раздел **`Дополнительные параметры`**
+4. Включить параметр **`Включить инструменты отладки browser chrome и дополнений`**
+5. Включить параметр **`Включить удалённую отладку`**
+6. Открыть **удалённую отладку. Клавиатурное сокращение: `ctrl+shift+alt+i`**
+7. **Принять** входящее подключение.
+8. Готово. Открывшееся окно удалённой отладки - те же самые инструменты разработчика, но оно **позволяет редактировать и смотреть стили окна Firefox**.
+
+
+Ещё можно поискать в интернете про *userChrome*, там много интересного.
 
 [↑ К навигации](#Навигация "↑ К навигации")
 
@@ -248,30 +274,6 @@ You can also search the Internet about *userChrome*, there are a lot of interest
 
 **Note:**
 Если в профиле уже есть файл **`userChrome`**, зарезервируйте его, так как он будет перезаписан.
-
-[↑ К навигации](#Навигация "↑ К навигации")
-
-
-### Редактирование стилей
-
-Как ни странно, для редкатирования стилей вам понадобится опыт работы с CSS и инструментами разработчика браузера Firefox.
-
-Стили, которые являются этой темой, находятся по пути **`/src/styles/`**. Делайте с ними всё, что захотите.
-
-В Firefox используется основанный на XML язык **XUL**. У его элементов тоже есть стили. Их и редактирует эта тема.
-Что бы их посмотреть, нужно:
-
-1. Перейти в **инструменты разработчика. Клавиатурное сокращение: `ctrl+shift+i`**
-2. В открывшейся панели перейти в **настройки. Клавиатурное сокращение: `F1`**
-3. Найти раздел **`Дополнительные параметры`**
-4. Включить параметр **`Включить инструменты отладки browser chrome и дополнений`**
-5. Включить параметр **`Включить удалённую отладку`**
-6. Открыть **удалённую отладку. Клавиатурное сокращение: `ctrl+shift+alt+i`**
-7. **Принять** входящее подключение.
-8. Готово. Открывшееся окно удалённой отладки - те же самые инструменты разработчика, но оно **позволяет редактировать и смотреть стили окна Firefox**.
-
-
-Ещё можно поискать в интернете про *userChrome*, там много интересного.
 
 [↑ К навигации](#Навигация "↑ К навигации")
 
