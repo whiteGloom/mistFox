@@ -10,10 +10,10 @@ class pathsLoader {
 		this._handlePath(string);
 	}
 
-	addPathsFromFile(filePath, skip) {
+	addPathsFromFile(filePath, skipLines) {
 		var filePathContent = fs.readFileSync(filePath, "utf8").split("\n");
 
-		for (var i = skip; i < filePathContent.length; i++) {
+		for (var i = skipLines; i < filePathContent.length; i++) {
 			this._handlePath(filePathContent[i]);
 		};
 	}

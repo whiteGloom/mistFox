@@ -1,5 +1,5 @@
-import colors from "colors/safe";
 import fs from "fs";
+import colors from "colors/safe";
 
 import helper from "./src/helper.js";
 import pathsLoader from "./src/pathsLoader.js";
@@ -11,7 +11,7 @@ const pathsFile = "profilePaths.txt";
 
 // Webpack config
 var cssOutputName = "userChrome",
-	entryChunkName = "main";
+	entryChunkName = "stylesLoader";
 webpackLoader.makeConfig({workFolder, entryChunkName, cssOutputName});
 
 // Simple build of styles

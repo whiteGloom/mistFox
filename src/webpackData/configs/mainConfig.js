@@ -12,7 +12,7 @@ function makeMainConfig(options) {
 			filename: (data) => {
 				switch(data.chunk.name) {
 					default: 
-						return "/service/serviceScripts.js";
+						return "[name].js";
 				}
 			}
 		},
@@ -22,7 +22,7 @@ function makeMainConfig(options) {
 			]
 		},
 		plugins: [
-			new RemoveServiceJsOutputsPlugin(["main"])
+			new RemoveServiceJsOutputsPlugin([options.entryChunkName])
 		],
 		optimization: {
 			splitChunks: {
