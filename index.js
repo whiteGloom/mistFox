@@ -2,8 +2,11 @@ import fs from "fs";
 import colors from "colors/safe";
 
 import npmHelper from "./src/npmHelper.js";
-import pathsLoader from "./src/pathsLoader.js";
-import webpackLoader from "./src/webpackData/webpackLoader.js";
+import PathsLoader from "./src/PathsLoader.js";
+import WebpackLoader from "./src/webpackData/WebpackLoader.js";
+
+const pathsLoader = new PathsLoader();
+const webpackLoader = new WebpackLoader();
 
 const npmArguments = process.argv.slice(2);
 const workFolder = process.cwd();
@@ -21,14 +24,13 @@ if (npmHelper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
 if (npmHelper.checkTag(npmArguments, "stylesAutoApply")) stylesAutoApplyMode();
 
 
-
 function simpleBuildMode() {
 	webpackLoader.run();
 }
 
 function stylesAutoApplyMode() {
 	pathsLoader.addPathFromString(npmHelper.getTagValue(npmArguments, "path"));
-	pathsLoader.addPathsFromFile(pathsFile, 10);
+	pathsLoader.addPathsFromFile(pathsFile, "\n", 10);
 	var paths = pathsLoader.getPaths();
 
 	if (paths.length === 0) {
@@ -44,6 +46,8 @@ function stylesAutoApplyMode() {
 			} catch(err) {
 				fs.mkdirSync(path + "/chrome/");
 				fs.copyFileSync("./prod/" + cssOutputName + ".css", path + "/chrome/" + cssOutputName + ".css");
+			} finally {
+				console.log(colors.green("The styles was successfully copied to: ") + colors.underline.green(path + "/chrome/"));
 			};
 		});
 	});

@@ -1,7 +1,7 @@
 import fs from "fs";
 import isValidPath from "is-valid-path";
 
-class pathsLoader {
+class PathsLoader {
 	constructor() {
 		this.paths = [];
 	}
@@ -10,8 +10,10 @@ class pathsLoader {
 		this._handlePath(string);
 	}
 
-	addPathsFromFile(filePath, skipLines) {
-		var filePathContent = fs.readFileSync(filePath, "utf8").split("\n");
+	addPathsFromFile(filePath, separator, skipLines) {
+		separator = typeof separator === "string" ? separator : "\n";
+
+		var filePathContent = fs.readFileSync(filePath, "utf8").split(separator);
 
 		for (var i = skipLines; i < filePathContent.length; i++) {
 			this._handlePath(filePathContent[i]);
@@ -32,4 +34,4 @@ class pathsLoader {
 	}
 }
 
-export default new pathsLoader;
+export default PathsLoader;

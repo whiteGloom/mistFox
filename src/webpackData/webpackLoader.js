@@ -11,7 +11,7 @@ class WebpackLoader {
 	}
 
 	makeConfig(options) {
-		this.config =  merge([
+		this.config = merge([
 			mainConfig({workFolder: options.workFolder, entryChunkName: options.entryChunkName}),
 			stylesConfig({cssOutputName: options.cssOutputName})
 		]);
@@ -44,4 +44,4 @@ class WebpackLoader {
 	}
 }
 
-export default new WebpackLoader;
+export default WebpackLoader;
