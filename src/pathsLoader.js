@@ -7,11 +7,15 @@ class PathsLoader {
 	}
 
 	addPathFromString(string) {
+		if (typeof string !== "string") return;
 		this._handlePath(string);
 	}
 
 	addPathsFromFile(filePath, separator, skipLines) {
+		if (typeof filePath !== "string") return;
+
 		separator = typeof separator === "string" ? separator : "\n";
+		skipLines = typeof skipLines === "number" ? skipLines : 0;
 
 		var filePathContent = fs.readFileSync(filePath, "utf8").split(separator);
 
@@ -28,9 +32,7 @@ class PathsLoader {
 		try {
 			fs.statSync(path + "/");
 			if (this.paths.indexOf(path) === -1 && path.length > 0) this.paths.push(path);
-		} finally {
-			return
-		};
+		} finally {	return };
 	}
 }
 

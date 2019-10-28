@@ -33,7 +33,7 @@ function stylesAutoApplyMode() {
 	pathsLoader.addPathsFromFile(pathsFile, "\n", 10);
 	var paths = pathsLoader.getPaths();
 
-	if (paths.length === 0) {
+	if (!paths.length) {
 		console.log(colors.red.underline("\n\nThere is no paths!\n\n"));
 		return;
 	}

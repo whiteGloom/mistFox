@@ -11,6 +11,8 @@ class WebpackLoader {
 	}
 
 	makeConfig(options) {
+		var options = typeof options === "object" ? options : {};
+
 		this.config = merge([
 			mainConfig({workFolder: options.workFolder, entryChunkName: options.entryChunkName}),
 			stylesConfig({cssOutputName: options.cssOutputName})

@@ -14,7 +14,7 @@
 
 *The last time the theme was tested on Firefox version 70.0.*
 
-**Used plugins:**
+**The major plugins used:**
 * **[Webpack](https://webpack.js.org/ "Webpack")**
 
 
@@ -165,7 +165,7 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 
 *Последний раз тема проверялась на Firefox версии 70.0.*
 
-**Используемые плагины:**
+**Основные используемые плагины:**
 * **[Webpack](https://webpack.js.org/ "Webpack")**
 
 
