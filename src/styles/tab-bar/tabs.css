@@ -6,11 +6,10 @@
 }
 
 .tabbrowser-tab[visuallyselected="true"] .tab-label-container,
-.tabbrowser-tab[multiselected] .tab-label-container {
+.tabbrowser-tab[multiselected="true"] .tab-label-container {
 	opacity: 1 !important;
 }
 
-.titlebar-spacer[type="pre-tabs"],
 .tabbrowser-tab::after,
 .tabbrowser-tab::before {
 	border: 0 !important;
@@ -22,7 +21,7 @@
 }
 
 .tabbrowser-tab:hover::after,
-.tabbrowser-tab[multiselected]::after, {
+.tabbrowser-tab[multiselected="true"]::after, {
 	margin-top: 2px !important;
 	margin-bottom: 2px !important;
 	opacity: .5 !important;
@@ -45,10 +44,15 @@
 	background-color: rgba(50, 50, 50, .75) !important;
 }
 
-.tab-line[multiselected],
+.tabbrowser-tab:hover .tab-line {
+	background-color: rgb(55,55,55) !important;
+}
+
+.tab-line[multiselected="true"],
 .tab-line[selected="true"] {
 	background-color: rgb(83, 105, 128) !important;
-	transition: 1s background-color !important;
+	transition-duration: 1s !important;
+	transition-property:  background-color !important;
 }
 
 .tab-loading-burst {
@@ -57,8 +61,9 @@
 
 .tab-close-button {
 	margin-inline-end: -2px !important;
+	color: white !important;
 	border-radius: 4px !important;
-	transition-property: fill, fill-opacity, fill, border-radius !important;
+	transition-property: fill, fill-opacity, fill, border-radius, color !important;
 	transition-duration: .2s !important;
 	opacity: .6 !important;
 }
@@ -66,4 +71,18 @@
 .tab-close-button:hover {
 	border-radius: 7px !important;
 	opacity: 1 !important;
+}
+
+.tab-icon-overlay,
+.tab-icon-image {
+	color: rgba(255,255,255,.6) !important;
+	transition-property: color !important;
+	transition-duration: .2s !important;
+}
+
+.tabbrowser-tab[multiselected="true"] .tab-icon-overlay,
+.tabbrowser-tab[multiselected="true"] .tab-icon-image,
+.tabbrowser-tab[selected="true"] .tab-icon-overlay,
+.tabbrowser-tab[selected="true"] .tab-icon-image {
+	color: white !important;
 }

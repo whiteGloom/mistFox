@@ -131,7 +131,8 @@ Another one path to your another profile
 And another one path to your another profile
 ```
 
-**After functions start**
+**After function's start**
+
 The project will start the assembly of styles, and then copy them to the **`chrome`** folder in the profile folder. If there is none, then he will create it.
 
 **Note:**
@@ -277,6 +278,7 @@ If the profile already contains the **`userChrome`** file, reserve it as it will
 ```
 
 **После запуска**
+
 Проект запустит сборку стилей, после чего скопирует их в папку **`chrome`** в папке профиля. Если такой нет, то он создаст её.
 
 **Note:**

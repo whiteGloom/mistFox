@@ -2,14 +2,20 @@
 	width: 15px !important;
 }
 
+.titlebar-buttonbox-container {
+	margin-bottom: 0 !important;
+}
+
 .titlebar-button {
+	color: rgba(255,255,255,.6) !important;
 	fill: white !important;
 	fill-opacity: .6 !important;
 	transition-duration: .4s !important;
-	transition-property: background-color, fill-opacity !important;
+	transition-property: background-color, fill-opacity, fill, color !important;
 }
 
 .titlebar-button:hover {
+	color: rgba(255,255,255,1) !important;
 	fill-opacity: 1 !important;
 	background-color: rgba(255, 255, 255, .1) !important;
 }
