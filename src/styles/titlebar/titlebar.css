@@ -1,9 +1,21 @@
 .titlebar-spacer[type="pre-tabs"] {
 	width: 15px !important;
+	border-inline-end: 0 !important;
 }
 
 .titlebar-buttonbox-container {
 	margin-bottom: 0 !important;
+}
+
+.titlebar-buttonbox:first-child::before {
+	display: block !important;
+	content: "" !important;
+	width: 1px !important;
+	background-color: white !important;
+	opacity: .15 !important;
+	height: 100% !important;
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
 }
 
 .titlebar-button {
@@ -20,18 +32,7 @@
 	background-color: rgba(255, 255, 255, .1) !important;
 }
 
-.titlebar-close:hover {
+.titlebar-button.titlebar-close:hover {
 	fill-opacity: 1 !important;
 	background-color: rgba(217, 34, 111, 0.1) !important;
-}
-
-.titlebar-buttonbox:first-child::before {
-	display: block !important;
-	content: "" !important;
-	width: 1px !important;
-	background-color: white !important;
-	opacity: .15 !important;
-	height: 100% !important;
-	margin-top: 4px !important;
-	margin-bottom: 4px !important;
 }

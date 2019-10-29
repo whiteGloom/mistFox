@@ -1,7 +1,9 @@
+
 #tabs-newtab-button {
 	color: white !important;
 	margin-left: 3px !important;
 }
+
 #navigator-toolbox .toolbarbutton-1,
 #TabsToolbar #TabsToolbar-customization-target #new-tab-button.toolbarbutton-1,
 #TabsToolbar #TabsToolbar-customization-target #alltabs-button.toolbarbutton-1 {
@@ -18,13 +20,28 @@
 
 .arrowscrollbox-scrollbox .scrollbutton-down,
 #new-tab-button .toolbarbutton-icon,
-#alltabs-button .toolbarbutton-icon,
 #tabs-newtab-button .toolbarbutton-icon {
 	color: white !important;
 	border-radius: 5px !important;
 	padding: 6px !important;
 	width: 24px !important;
 	height: 24px !important;
+	transition-duration: .2s !important; 
+	transition-property: background, fill, fill-opacity, color !important;
+}
+
+#alltabs-button .toolbarbutton-badge-stack {
+	padding: 0px !important;
+	width: 24px !important;
+	height: 24px !important;
+}
+
+#alltabs-button .toolbarbutton-icon {
+	color: white !important;
+	border-radius: 5px !important;
+	padding: 6px !important;
+	height: 100% !important;
+	width: 100% !important;
 	transition-duration: .2s !important; 
 	transition-property: background, fill, fill-opacity, color !important;
 }
@@ -43,16 +60,83 @@
 	background-color: transparent !important;
 }
 
+
+/* Start-end indicators*/
+
+.arrowscrollbox-overflow-start-indicator,
+.arrowscrollbox-overflow-end-indicator {
+	border-left: 1px solid rgba(255,255,255,.15) !important;
+}
+
+
+.arrowscrollbox-overflow-end-indicator {
+	margin-inline-end: 0px !important;
+}
+
+.arrowscrollbox-overflow-start-indicator {
+	margin-inline-start: 0px !important;
+}
+
+/* Tabs scroll buttons*/
+
 .scrollbutton-up,
 .scrollbutton-down {
-	fill: rgba(255,255,255,.6) !important;
-	color: rgba(255,255,255,.6) !important;
-	transition-duration: .2s;
-	transition-property: fill, color, !important;
+	border-bottom: 0 !important;
+	opacity: 1 !important;
+	background-color: transparent !important;
+	transition-property: background-color !important;
+	transition-duration: .2s !important;
 }
 
 .scrollbutton-up:hover,
 .scrollbutton-down:hover {
+	opacity: 1 !important;
+	background-color: rgba(255,255,255,.1) !important;
+}
+
+.scrollbutton-up .toolbarbutton-icon,
+.scrollbutton-down .toolbarbutton-icon {
+	opacity: 1 !important;
+	fill: rgba(255,255,255,.6) !important;
+	color: rgba(255,255,255,.6) !important;
+	transition-duration: .2s !important;
+	transition-property: fill, color !important;
+}
+
+.scrollbutton-up:hover .toolbarbutton-icon,
+.scrollbutton-down:hover .toolbarbutton-icon {
+	opacity: 1 !important;
 	fill: rgba(255,255,255,1) !important;
 	color: rgba(255,255,255,1) !important;
+}
+
+
+.scrollbutton-up[disabled="true"],
+.scrollbutton-down[disabled="true"] {
+	opacity: 1 !important;
+	background-color: transparent !important;
+	transition-property: background-color !important;
+	transition-duration: .2s !important;
+}
+
+.scrollbutton-up[disabled="true"]:hover,
+.scrollbutton-down[disabled="true"]:hover {
+	opacity: 1 !important;
+	background-color: transparent !important;
+}
+
+.scrollbutton-up[disabled="true"] .toolbarbutton-icon,
+.scrollbutton-down[disabled="true"] .toolbarbutton-icon {
+	opacity: 1 !important;
+	fill: rgba(255,255,255,.4) !important;
+	color: rgba(255,255,255,.4) !important;
+	transition-duration: .2s !important;
+	transition-property: fill, color !important;
+}
+
+.scrollbutton-up[disabled="true"]:hover .toolbarbutton-icon,
+.scrollbutton-down[disabled="true"]:hover .toolbarbutton-icon {
+	opacity: 1 !important;
+	fill: rgba(255,255,255,.4) !important;
+	color: rgba(255,255,255,.4) !important;
 }

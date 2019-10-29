@@ -52,7 +52,7 @@
 .tab-line[selected="true"] {
 	background-color: rgb(83, 105, 128) !important;
 	transition-duration: 1s !important;
-	transition-property:  background-color !important;
+	transition-property: background-color !important;
 }
 
 .tab-loading-burst {
