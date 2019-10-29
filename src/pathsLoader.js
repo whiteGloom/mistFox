@@ -1,5 +1,4 @@
 import fs from "fs";
-import isValidPath from "is-valid-path";
 
 class PathsLoader {
 	constructor() {
