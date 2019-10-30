@@ -45,7 +45,7 @@
 }
 
 .tabbrowser-tab:hover .tab-line {
-	background-color: rgb(55,55,55) !important;
+	background-color: rgb(70,70,90) !important;
 }
 
 .tab-line[multiselected="true"],

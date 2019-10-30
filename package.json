@@ -1,6 +1,6 @@
 {
 	"name": "mistfox",
-	"version": "0.3.13",
+	"version": "0.3.14",
 	"description": "A Firefox theme.",
 	"main": "index.js",
 	"scripts": {
