@@ -1,4 +1,4 @@
-import RemoveServiceJsOutputsPlugin from "../localPlugins/RemoveServiceJsOutputsPlugin.js";
+import removeServiceOutputsPlugin from "remove-service-outputs-plugin";
 
 function makeMainConfig(options) {
 	options = options ? options : {};
@@ -22,7 +22,7 @@ function makeMainConfig(options) {
 			]
 		},
 		plugins: [
-			new RemoveServiceJsOutputsPlugin([options.entryChunkName])
+			new removeServiceOutputsPlugin([[options.entryChunkName, /.*\.js$/]])
 		],
 		optimization: {
 			splitChunks: {

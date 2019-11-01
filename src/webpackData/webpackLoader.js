@@ -41,7 +41,7 @@ class WebpackLoader {
 			if (err !== true) {
 				console.log(colors.green.underline("\n\nCompiled successfully.\n\n"));
 				if (typeof callback == "function") callback(stats);
-			};
+			}
 		}
 	}
 }
