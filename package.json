@@ -1,6 +1,6 @@
 {
 	"name": "mistfox",
-	"version": "0.3.15",
+	"version": "0.3.16",
 	"description": "A Firefox theme.",
 	"main": "index.js",
 	"scripts": {
@@ -21,6 +21,7 @@
 		"remove-service-outputs-plugin": "github:whiteGloom/remove-service-outputs-plugin#v0.1.0",
 		"style-loader": "^1.0.0",
 		"webpack": "^4.41.2",
+		"webpack-loader": "github:whiteGloom/webpack-loader#v0.1.5",
 		"webpack-merge": "^4.2.2"
 	},
 	"dependencies": {},
