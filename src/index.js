@@ -1,68 +1,26 @@
-import removeServiceOutputsPlugin from "remove-service-outputs-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import WebpackLoader from "webpack-loader";
 import colors from "colors/safe";
 import fs from "fs";
 
-import npmHelper from "./src/npmHelper.js";
-import PathsLoader from "./src/PathsLoader.js";
+import PathsLoader from "./plugins/PathsLoader.js";
+import npmHelper from "./plugins/npmHelper.js";
+import makeConfig from "./plugins/makeConfig.js";
+
 
 const pathsLoader = new PathsLoader();
 const webpackLoader = new WebpackLoader();
 
-//
-// Config
-//
-
 const npmArguments = process.argv.slice(2);
 const workFolder = process.cwd();
 const pathsFile = "profilePaths.txt";
-
-// Webpack config
-var entryChunkName = "stylesLoader",
-	cssOutputName = "userChrome.css";
-	
-webpackLoader.makeNewConfig("main", {
-	entry: {
-		stylesLoader: workFolder + "/src/stylesLoader.js"
-	},
-	output: {
-		path: workFolder + "/prod/",
-		filename: data => {
-			switch (data.chunk.name) {
-				default:
-					return "[name].js"
-			}
-		}
-	},
-	module: {
-		rules: [
-			{
-				test: /\.(css)/,
-				use: [
-					"style-loader",
-					MiniCssExtractPlugin.loader,
-					{ loader: "css-loader", options: { url: false } }
-				],
-				exclude: /[\\/]node_modules[\\/]/
-			}
-		]
-	},
-	plugins: [
-		new removeServiceOutputsPlugin([
-			[entryChunkName, /.*\.js$/]
-		]),
-		new MiniCssExtractPlugin({
-			filename: cssOutputName
-		})
-	],
-	devtool: "none"
-}, "development");
+const chunkName = "stylesLoader";
+const cssOutputName = "userChrome.css";
 
 
-//
-// Init part
-//
+
+/////////////////
+
+webpackLoader.makeNewConfig("main", makeConfig({workFolder, chunkName, cssOutputName}), "development");
 
 // Simple build of styles
 if (npmHelper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
@@ -70,6 +28,9 @@ if (npmHelper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
 // Build of styles and auto copying them to profile folder
 if (npmHelper.checkTag(npmArguments, "stylesAutoApply")) stylesAutoApplyMode();
 
+
+
+/////////////////
 
 function simpleBuildMode() {
 	webpackLoader.run();

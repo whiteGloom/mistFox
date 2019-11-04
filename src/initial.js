@@ -1,6 +1,8 @@
 import fs from "fs";
 
-fs.writeFileSync("profilePaths.txt",
+var path = process.cwd();
+
+fs.writeFileSync(path + "profilePaths.txt",
 	"Below the dashed line, enter the paths to Firefox profiles (no delimiters, one path per line) to which styles will be applied."
 	+ "\nПод пунктирной линией введите пути к профилям Firefox (без разделителей, один путь на одну строку), к которым будут применены стили."
 	+ "\n\nExample:"
