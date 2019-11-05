@@ -1,6 +1,6 @@
 {
 	"name": "mistfox",
-	"version": "0.3.18",
+	"version": "0.3.19",
 	"description": "A Firefox theme.",
 	"main": "index.js",
 	"scripts": {
@@ -18,10 +18,10 @@
 		"colors": "^1.4.0",
 		"css-loader": "^3.2.0",
 		"mini-css-extract-plugin": "^0.8.0",
-		"remove-service-outputs-plugin": "github:whiteGloom/remove-service-outputs-plugin#v0.1.1",
+		"remove-service-outputs-plugin": "github:whiteGloom/remove-service-outputs-plugin#v0.1.4",
 		"style-loader": "^1.0.0",
 		"webpack": "^4.41.2",
-		"webpack-loader": "github:whiteGloom/webpack-loader#v0.1.5",
+		"webpack-loader": "github:whiteGloom/webpack-loader#v0.1.6",
 		"webpack-merge": "^4.2.2"
 	},
 	"dependencies": {},
