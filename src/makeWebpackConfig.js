@@ -1,13 +1,17 @@
 import removeServiceOutputsPlugin from "remove-service-outputs-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-function makeConfig(options) {
+import glConfig from "./globalConfig.js";
+
+const cssOutputName = glConfig.cssOutputName;
+
+export default function(options) {
 	var workFolder = options.workFolder;
-	var chunkName = options.chunkName;
-	var cssOutputName = options.cssOutputName;
 	
 	var cfg = {
-		entry: {},
+		entry: {
+			stylesLoader: workFolder + "/src/theme/stylesEntry.js"
+		},
 		output: {
 			path: workFolder + "/prod/",
 			filename: data => {
@@ -32,7 +36,7 @@ function makeConfig(options) {
 		},
 		plugins: [
 			new removeServiceOutputsPlugin([
-				[chunkName, /.*\.js$/]
+				["stylesLoader", /.*\.js$/]
 			]),
 			new MiniCssExtractPlugin({
 				filename: cssOutputName
@@ -40,9 +44,6 @@ function makeConfig(options) {
 		],
 		devtool: "none"
 	};
-	cfg.entry[chunkName] = workFolder + "/src/stylesEntryLoader.js";
 
 	return cfg;
 }
-
-export default makeConfig;

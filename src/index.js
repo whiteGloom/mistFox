@@ -2,9 +2,10 @@ import WebpackLoader from "webpack-loader";
 import colors from "colors/safe";
 import fs from "fs";
 
-import PathsLoader from "./plugins/PathsLoader.js";
+import glConfig from "./globalConfig.js";
 import npmHelper from "./plugins/npmHelper.js";
-import makeConfig from "./plugins/makeConfig.js";
+import PathsLoader from "./plugins/PathsLoader.js";
+import makeConfig from "./makeWebpackConfig.js";
 
 
 const pathsLoader = new PathsLoader();
@@ -13,14 +14,14 @@ const webpackLoader = new WebpackLoader();
 const npmArguments = process.argv.slice(2);
 const workFolder = process.cwd();
 const pathsFile = "profilePaths.txt";
-const chunkName = "stylesLoader";
-const cssOutputName = "userChrome.css";
+
+var cssOutputName = glConfig.cssOutputName;
 
 
 
-/////////////////
+// Init
 
-webpackLoader.makeNewConfig("main", [makeConfig({workFolder, chunkName, cssOutputName})], "development");
+webpackLoader.makeNewConfig("main", [makeConfig({workFolder})], "development");
 
 // Simple build of styles
 if (npmHelper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
@@ -30,7 +31,7 @@ if (npmHelper.checkTag(npmArguments, "stylesAutoApply")) stylesAutoApplyMode();
 
 
 
-/////////////////
+// Functions
 
 function simpleBuildMode() {
 	webpackLoader.run();
