@@ -20,7 +20,7 @@ const cssOutputName = "userChrome.css";
 
 /////////////////
 
-webpackLoader.makeNewConfig("main", makeConfig({workFolder, chunkName, cssOutputName}), "development");
+webpackLoader.makeNewConfig("main", [makeConfig({workFolder, chunkName, cssOutputName})], "development");
 
 // Simple build of styles
 if (npmHelper.checkTag(npmArguments, "simpleBuild")) simpleBuildMode();
