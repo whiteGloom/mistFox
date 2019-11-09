@@ -84,7 +84,7 @@ To see them, you need:
 2. In the panel that opens, go to **settings. Keyboard Shortcut: `F1`**
 3. Find **section `Advanced Settings`**
 4. **Enable** option **`Enable browser chrome and add-on debugging toolboxes`**
-5. **Enable** the option ** `Enable remote debugging` **
+5. **Enable** the option **`Enable remote debugging`**
 6. Open **remote debugging. Keyboard shortcut: `ctrl + shift + alt + i`**
 7. **Accept** incoming connection.
 8. Done. The opened remote debugging window is the same developer tools, but **it allows you to edit and view the styles of the Firefox window**.
