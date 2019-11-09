@@ -3,7 +3,7 @@ var npmHelper = {
 		if (!Array.isArray(list)) return;
 		if (typeof tag !== "string") return;
 
-		if (list.indexOf(tag) > -1) return true;
+		if (list.indexOf(tag) > -1 && list[list.indexOf(tag)].length === tag.length) return true;
 	},
 
 	getTagValue(list, key, separator) {
